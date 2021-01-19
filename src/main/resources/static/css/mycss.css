@@ -1,0 +1,36 @@
+@charset "ISO-8859-1";
+
+body {
+	text-align: center;
+	padding-top:50px;
+	background-color: #c7e4f2;
+}
+
+table{
+	border: 0.2px dashed blue;
+}
+ th, td{
+	border: 1px solid blue;
+}
+
+input[type=text]{
+	backgound-color: lightblue;
+}
+input[type=password] {
+	background-color:lightblue;
+}
+input[type=submit] {
+	background-color:#746bbf;
+}
+input[type=submit]:hover {
+	background-color:#474270;
+}
+h1{
+	color:#463e87;
+}
+.alert{
+	color:red;
+}
+.alertGood{
+	color:blue;
+}

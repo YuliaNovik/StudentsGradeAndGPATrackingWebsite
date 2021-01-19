@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeLeaf.org/thymeLeaf-extras-springsecurity5">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" media="all" th:href="@{/css/mycss.css}"> 
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Registration of New Student</h1>
+	<form th:action="@{/register}" method="post">
+	Name: <input type="text" name="name"/><br><br>
+	Password(Student ID): <input type="password" name="password" /><br><br>
+	
+	<input type="checkbox" name="student" > 
+    <label class="">Student
+    </label><br> <br><br> 
+	<input type="submit" value="Register" />
+	
+	
+	</form>
+	Go to<a th:href="@{/professor}">Professor Page</a><br><br>
+	View <a th:href="@{/view}">Student Information</a><br><br>
+</body>
+</html>

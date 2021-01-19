@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeLeaf.org/thymeLeaf-extras-springsecurity5">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" media="all"
+	th:href="@{/css/mycss.css}"> 
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Create New Student</h1>
+
+	<form action="#" th:action="@{/add}" th:object="${s}" method="get">
+
+		<p>
+			Name: <input type="text" th:field="*{name}" />
+		</p>
+		<br>
+		<p>
+			Student ID: <input type="text" th:field="*{stId}" />
+		</p>
+		<br>
+		<p>
+			Exercises: <input type="text" th:field="*{exs}" />
+		</p>
+		<br>
+		<p>
+			Assignment1: <input type="text" th:field="*{assign1}" />
+		</p>
+		<br>
+		<p>
+			Assignment2:<input type="text" th:field="*{assign2}" />
+		</p>
+		<br>
+
+		<p>
+			Assignment3: <input type="text" th:field="*{assign3}" />
+		</p>
+		<br>
+		
+		<p>
+			Midterm: <input type="text" th:field="*{midterm}" />
+		</p>
+		<br>
+        <p>
+		    Final Exam: <input type="text" th:field="*{finalEx}" />
+		</p>
+		<br>
+		
+     <!--    <p>
+		    Weighted Average: <input type="text" th:field="*{wA}" />
+		</p>
+		<br>
+        <p>
+		    Grade: <input type="text" th:field="*{grade}" />
+		</p>
+		
+		<br>--> 
+		<p>
+			<input type="submit" value="Add">
+		</p>
+		<br>
+	</form>
+	View <a  th:href="@{/view}">Student Information</a><br><br>
+	Go back <a th:href="@{/}">To Root page</a><br><br>
+	Go to<a th:href="@{/professor}">Professor Page</a><br><br>
+</body>
+</html>

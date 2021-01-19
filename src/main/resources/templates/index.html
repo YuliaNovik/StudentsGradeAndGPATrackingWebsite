@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html  lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeLeaf.org/thymeLeaf-extras-springsecurity5">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" media="all"
+	th:href="@{/css/mycss.css}">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Welcome to the main Root page</h1><br>
+ 
+ <div sec:authorize="isAuthenticated()">
+	    
+	   	User's Name: <span sec:authentication="name"></span>
+		 <br>
+		 Roles:<span sec:authentication="principal.authorities"><br><br>
+		 </span>
+		<form action="#" th:action="@{/logout}" method="post">
+			<input type="submit" value="Logout"/>
+		</form>
+	</div>
+Go to the <a th:href="@{/professor}"> Professor Page</a><br><br>
+Go to the <a th:href="@{/student}"> Student Page</a><br><br>
+<img   src="../static/images/sky.jpg" th:src="@{/images/sky.jpg}">
+</body>
+</html>

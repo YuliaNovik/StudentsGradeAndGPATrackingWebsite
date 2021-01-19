@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeLeaf.org/thymeLeaf-extras-springsecurity5">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" media="all"
+	th:href="@{/css/mycss.css}"> 
+<title>Insert title here</title>
+</head>
+<body>
+<h1>View Student Information</h1>
+
+<table>
+		<tr>
+			<th>Name</th>
+			<th>Student ID</th>
+			<th>Exercises</th>
+			<th>Assignment 1</th>
+			<th>Assignment 2</th>
+			<th>Assignment 3</th>
+			<th>Midterm Examen</th>
+			<th>Final Examen</th>
+			<th>Weighted Average</th>
+			<th>Grade</th>
+			
+		</tr>
+		<tr th:each="s:${s}">
+		<td th:text="${s.name}"></td>
+		<td th:text="${s.stId}"></td>
+		<td th:text="${s.exs}"></td>
+	    <td th:text="${s.assign1}"></td>
+		<td th:text="${s.assign2}"></td>
+		<td th:text="${s.assign3}"></td>
+		<td th:text="${s.midterm}"></td>
+		<td th:text="${s.finalEx}"></td>
+		<td th:text="${s.wA}"></td>
+		<td th:text="${s.grade}"></td>
+		
+		
+		<td><a href="" th:href=@{/edit/{id}(id=${s.id})}>EDIT</a></td>
+		<td><a href="" th:href=@{/delete/{id}(id=${s.id})}>DELETE</a></td>
+
+		</tr>
+	</table>
+	
+	<table>
+	<tr>
+	<th>Class Exercise Average</th>
+			<th>Class A1 Average</th>
+			<th>Class A2 Average</th>
+			<th>Class A3 Average</th>
+			<th>Class Midterm Average</th>
+			<th>Class Final Average</th>
+			<th>Class Weighted Average</th>
+	</tr>
+	<tr>
+	<td th:text="${classExsAvg}"></td>
+		<td th:text="${classAssign1ExsAvg}"></td>
+		<td th:text="${classAssign2ExsAvg}"></td>
+		<td th:text="${classAssign3ExsAvg}"></td>
+		<td th:text="${classMidtermExsAvg}"></td>
+		<td th:text="${classFinAvg}"></td>                     
+		
+		<td th:text="${classAvg}"></td>     
+	</tr>
+	</table>
+	Go to<a th:href="@{/professor}">Professor's Page</a><br><br>
+	Go to<a th:href="@{/student}">Student's Page</a><br><br>
+	Go back to  <a th:href="@{/add}">Add New Student</a>
+</body>
+</html>

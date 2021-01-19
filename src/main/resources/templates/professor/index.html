@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeLeaf.org/thymeLeaf-extras-springsecurity5">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" media="all"
+	th:href="@{/css/mycss.css}">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>This is Professor's page</h1>
+
+<div sec:authorize="isAuthenticated()">
+	    
+		Professor's Name: <span sec:authentication="name"></span>
+		 <br><br><br>
+		 Roles:<span sec:authentication="principal.authorities">
+		 </span> <br><br><br>
+		<form action="#" th:action="@{/logout}" method="post">
+			<input type="submit" value="Logout"/>
+		</form>
+	</div>
+<br>
+Go to the <a th:href="@{/}">Root Page</a><br><br>
+Create <a th:href="@{/add}">New Student</a><br><br>
+Register <a th:href="@{/registration}">New Student</a><br><br>
+View <a th:href="@{/view}">Student Information</a><br><br>
+</body>
+</html>
